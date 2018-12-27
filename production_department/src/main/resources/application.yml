@@ -1,0 +1,20 @@
+#数据库连接
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/
+    username: root
+    password: 123
+#端口号设置 
+server:
+  port: 8082
+  
+#dubbo配置
+
+dubbo:
+  application:
+    name: production_department
+  registry:
+    address: zookeeper://192.168.11.91:2181
+    port: 20881
+    protocol: dubbo1
