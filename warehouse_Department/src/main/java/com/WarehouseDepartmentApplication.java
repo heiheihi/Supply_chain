@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 
-@EnableDubbo
+//@EnableDubbo
 @SpringBootApplication
 @MapperScan(value="mapper")
 public class WarehouseDepartmentApplication {

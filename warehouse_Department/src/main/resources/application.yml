@@ -5,16 +5,31 @@ spring:
     url: jdbc:mysql://localhost:3306/supply_chain
     username: root
     password: 123
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+  thymeleaf:
+    cache: false
+    encoding: utf-8
+    mode: HTML5
+    servlet:
+      content-type: text/html; charset=utf-8
 #端口号设置 
 server:
   port: 8081
   
 #dubbo配置
-
-dubbo:
-  application:
-    name: warehouse_Department
-  registry:
-    address: zookeeper://192.168.11.91:2181
-    port: 20880
-    protocol: dubbo
+#dubbo:
+#  application:
+#    name: warehouse_Department
+#  registry:
+#    address: zookeeper://192.168.11.91:2181
+#    port: 20880
+#    protocol: dubbo
+    
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
