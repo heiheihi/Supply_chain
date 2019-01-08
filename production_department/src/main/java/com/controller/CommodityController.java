@@ -6,19 +6,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.fhhService.CommodityService;
+import com.fhhService.Commodity_detailsService;
 import com.fhhpojo.Commodity;
 
 @RestController
 public class CommodityController {
 
 	@Reference
-	CommodityService commodityService;
+	Commodity_detailsService commodityService;
 	
 	
-	@RequestMapping(value="/list1")
-	public List<Commodity> list(){
+	/*@RequestMapping(value="/list1")*/
+	/*public List<Commodity> list(){
 		return commodityService.listCommodity();
 		
-		}
+		}*/
 	}

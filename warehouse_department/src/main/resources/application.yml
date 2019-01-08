@@ -1,0 +1,26 @@
+#数据库连接
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/supply_chain
+    username: root
+    password: 123
+  thymeleaf:
+    cache: false
+    
+#日志配置    
+logging:
+  level:
+    com.mapper: debug
+    
+#定义端口
+server:
+  port: 8083    
+  
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+  

@@ -7,6 +7,7 @@ public class Commodity_details {
 	
 	private int d_id;
 	private Commodity commodity;
+	private Stock stock;
 	private int w_id;
 	private String weight;
 	private String volume;
@@ -14,13 +15,22 @@ public class Commodity_details {
 	private String bar_code;
 	private Date inventory_time;
 	private int t_id;
-	private String cangku;
+    private Warehouse warehouse;
+    
+    
 	
-	public String getCangku() {
-		return cangku;
+	
+	public Warehouse getWarehouse() {
+		return warehouse;
 	}
-	public void setCangku(String cangku) {
-		this.cangku = cangku;
+	public void setWarehouse(Warehouse warehouse) {
+		this.warehouse = warehouse;
+	}
+	public Stock getStock() {
+		return stock;
+	}
+	public void setStock(Stock stock) {
+		this.stock = stock;
 	}
 	public int getD_id() {
 		return d_id;

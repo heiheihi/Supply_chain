@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.Commodity_detailsMapper">
+
+   <resultMap type="com.fhhpojo.Commodity_details" id="selDetails" autoMapping="false">
+     <id property="d_id" column="d_id"/>
+     <result property="weight" column="weight"/>
+     <result property="volume" column="volume"/>
+     <result property="date_of_production" column="date_of_production"/>
+     <result property="bar_code" column="bar_code"/>
+     <result property="inventory_time" column="inventory_time"/>
+     <association property="commodity" javaType="com.fhhpojo.Commodity">
+       <id property="c_id" column="c_id"/>
+       <result property="commodity_name" column="commodity_name"/>
+     </association>
+     <association property="stock" javaType="com.fhhpojo.Stock">
+        <id property="k_id" column="k_id"/>
+        <result property="number" column="number"/>
+     </association>
+     <association property="warehouse" javaType="com.fhhpojo.Warehouse">
+         <id property="w_id" column="w_id"/>
+         <result property="w_name" column="w_name"/>
+     </association>
+   </resultMap>
+
+
+   <select id="listDetails" resultMap="selDetails">
+	     SELECT * FROM Commodity_details d,commodity c,Stock k,warehouse w WHERE d.c_id=c.c_id AND 
+	        d.k_id=k.d_id AND d.w_id=w.w_id
+        <if test="date_of_production!=null and date_of_production!=''">
+          and date_of_production=#{date_of_production}
+        </if>
+        <if test="commodity_name!=null and commodity_name!=''">
+           and commodity_name=#{commodity_name}
+        </if>
+   </select>
+
+</mapper>
